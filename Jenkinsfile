@@ -35,9 +35,9 @@ pipeline {
         }
 
         stage('Deploy to Dev Environment') {
-            def dockerRun = 'docker run -d -p 8000:80 --name myweb alamwasim/myweb-nginx:1.0.0'
+            // def dockerRun = 'docker run -d -p 8000:80 --name myweb alamwasim/myweb-nginx:1.0.0'
             steps {
-                sh '${dockerRun}'
+                sh 'docker run -d -p 8000:80 --name myweb alamwasim/myweb-nginx:1.0.0'
             }
         }
     }
