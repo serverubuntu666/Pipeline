@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent { label 'DEV' }
     options {
         timestamps()
@@ -22,4 +22,17 @@ pipeline {
     }
 
 
+}*/
+pipeline {
+    agent { label 'DEV'}
+    options { timestamps() }
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t alamwasim/myweb-nginx:1.0.0 .'
+            }
+        }
+    }
 }
+
