@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'DEV' }
     options {
-        timestamp()
+        timestamps()
     }    
     stages {
         stage('build') {
