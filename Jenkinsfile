@@ -2,10 +2,19 @@ pipeline {
     agent { label 'DEV' }
 
     stages {
+        stage('build') {
+            steps {
+                sh 'echo "build phase..........."'
+            }
+        }
         stage('test') {
             steps {
-                sh 'echo "hello"'
-                sh "date"
+                sh 'echo "test phase............"'
+            }
+        }
+        stage('release') {
+            steps {
+                sh 'echo "release phase............."'
             }
         }
     }
